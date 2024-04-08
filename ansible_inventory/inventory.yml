@@ -1,0 +1,10 @@
+ungrouped:
+  hosts:
+    danielgetahun46@gmail.com:
+
+webservers:
+  hosts:
+    10.150.0.5:
+      ansible_user: danielgetaun46
+      
+
