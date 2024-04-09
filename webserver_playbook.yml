@@ -1,3 +1,50 @@
 ---
 - hosts: all 
-  become: yes  
+  become: yes
+  tasks:  
+  - name: Update APT
+    ansible.builtin.apt:
+      update_cache: true
+
+  - name: Install the latest version of Apache and python3
+  ansible.builtin.package:
+    name:
+      - httpd
+      - python3
+    state: latest
+
+  - name: Copy Apache configuration file
+    ansible.builtin.copy:
+      src: files/config/apache.conf
+      dest: /etc/apache2/apache.conf
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: Copy index.html file
+    ansible.builtin.copy:
+      src: files/site/index.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: Create symbolic link for apache.conf
+    ansible.builtin.file:
+      src: files/config/apache.conf
+      dest: /etc/apache2/apache.conf
+      state: link
+
+
+
+  - name: Create symbolic link for index.html
+    ansible.builtin.file:
+      src: files/site/index.html
+      dest: /var/www/html/index.html
+      state: link
+
+  - name: restart apache2 servers
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+
