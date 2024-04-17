@@ -34,7 +34,3 @@
         dest: /etc/apache2/mods-enabled/headers.load
         state: link
           
-    - name: restart apache2 servers
-      ansible.builtin.service:
-        name: apache2
-        state: restarted
