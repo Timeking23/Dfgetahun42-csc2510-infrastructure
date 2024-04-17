@@ -1,7 +1,34 @@
 ---
 # tasks file for apache2
-  - name: Install the latest version of Apache
+  - hosts: all
+  become: 'yes'
+  tasks:
+    - name: Install the latest version of Apache and python3
       ansible.builtin.package:
         name:
           - apache2
+          - python3
         state: latest
+
+    - name: Copy Apache configuration file
+      ansible.builtin.copy:
+        src: files/config/apache2.conf
+        dest: /etc/apache2/apache.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Copy index.html file
+      ansible.builtin.copy:
+        src: files/site/index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Create symbolic link
+      ansible.builtin.file:
+        src: /etc/apache2/mods-available/headers.load 
+        dest: /etc/apache2/mods-enabled/headers.load
+        state: link
+          
