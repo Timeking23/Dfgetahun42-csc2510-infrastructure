@@ -1,2 +1,7 @@
 ---
 # tasks file for apache2
+  - name: Install the latest version of Apache
+      ansible.builtin.package:
+        name:
+          - apache2
+        state: latest
