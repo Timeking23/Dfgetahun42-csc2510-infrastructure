@@ -1,5 +1,6 @@
 ---
 # tasks file for update_apt
-- name: Update APT 
-    ansible.builtin.apt:
+- name: Update APT
+  ansible.builtin.apt:
     update_cache: true
+
