@@ -1,8 +1,8 @@
 ---
 # tasks file for apache2
   - hosts: all
-  become: 'yes'
-  tasks:
+    become: 'yes'
+    tasks:
     - name: Install the latest version of Apache and python3
       ansible.builtin.package:
         name:
