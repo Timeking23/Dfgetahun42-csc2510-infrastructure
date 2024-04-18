@@ -1,10 +1,10 @@
 ungrouped:
   hosts:
-    10.150.0.5:
+    10.150.0.8:
 
 webservers:
   hosts:
-    10.150.0.5:
+    10.150.0.8:
       ansible_user: danielgetaun46
       
 
