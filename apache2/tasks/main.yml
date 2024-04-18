@@ -12,7 +12,7 @@
 
     - name: Copy Apache configuration file
       ansible.builtin.copy:
-        src: apache2.conf
+        src: '{{ full_path }}/apache2.conf'
         dest: /etc/apache2/apache.conf
         owner: root
         group: root
@@ -20,7 +20,7 @@
 
     - name: Copy index.html file
       ansible.builtin.copy:
-        src: index.html
+        src: '{{ full_path }}/index.html'
         dest: /var/www/html/index.html
         owner: root
         group: root
