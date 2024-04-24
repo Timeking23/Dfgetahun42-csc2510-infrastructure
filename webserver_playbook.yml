@@ -5,5 +5,5 @@
   roles:
     - update_apt
     - apache2
-
-
+  vars:
+    mysql_import_data: yes 
