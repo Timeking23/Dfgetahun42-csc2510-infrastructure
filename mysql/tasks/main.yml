@@ -80,4 +80,8 @@
 - name: Update MySQL bind-address and mysqlx-bind-address to allow external connections
 # TODO - this can be done in a single task or broken into two tasks, one per line
 # Use notify to restart mysql once complete.
-
+  ansible.builtin.lineinfile:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf 
+    regexp:'^(bind-address|mysqlx-bind-address)\s*=\s*127.0.0.1' 
+    line: 
+    
