@@ -6,7 +6,7 @@
       - python3-pip
     state: present
 # TODO: this task should only run if the OS is Debian based
-
+    when: ansible_facts['os_family'] == "Debian"
 - name: Install PyMySQL
   pip:
     name: pymysql
@@ -25,18 +25,32 @@
 
 - name: Copy update script to the server
 # TODO 
+  copy:
+    src: ./passwrd.sh
+    dest:/tmp/passwrd.sh  
 
 - name: Execute the script
 # TODO
+  ansible.builtin.shell: ./passwrd.sh
+  register: result
+
 
 - name: Output result from script
 # TODO
+  ansible.builtin.debug:
+    var: result
+    verbosity: 2
 
 - name: Clean up - remove the script from the remote server
 # TODO
+  ansible.builtin.file:
+    path: /tmp/passwrd.sh
+    state: absent
 
 - name: Create MySQL database
 # TODO
+  community.mysql.mysql_db:
+    name: mysql
 
 - name: Create MySQL user
   mysql_user:
@@ -50,10 +64,19 @@
 
 - name: Copy SQL file to remote host
 # TODO - this should only be run if mysql_import_data is true
+  ansible.builtin.copy:
+    src: /example.db
+    dest: /example.db
+    when: mysql_import_data
 
 - name: Import SQL data
 # TODO
-
+  community.mysql.mysql_db:
+    name: mysql
+    state: import
+    target: /example.db
+    when: mysql_import_data
+ 
 - name: Update MySQL bind-address and mysqlx-bind-address to allow external connections
 # TODO - this can be done in a single task or broken into two tasks, one per line
 # Use notify to restart mysql once complete.
