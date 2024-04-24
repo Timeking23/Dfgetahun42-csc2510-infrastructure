@@ -83,5 +83,5 @@
   ansible.builtin.lineinfile:
     path: /etc/mysql/mysql.conf.d/mysqld.cnf 
     regexp:'^(bind-address|mysqlx-bind-address)\s*=\s*127.0.0.1' 
-    line: 
+    line: '\1 = 0.0.0.0'
     
