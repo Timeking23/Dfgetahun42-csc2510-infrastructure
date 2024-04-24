@@ -65,8 +65,8 @@
 - name: Copy SQL file to remote host
 # TODO - this should only be run if mysql_import_data is true
   ansible.builtin.copy:
-    src: /example.db
-    dest: /example.db
+    src: "{{ mysql_sql_file }}"
+    dest: /tmp/
     when: mysql_import_data
 
 - name: Import SQL data
@@ -74,7 +74,7 @@
   community.mysql.mysql_db:
     name: mysql
     state: import
-    target: /example.db
+    target: "{{ mysql_sql_file }}"
     when: mysql_import_data
  
 - name: Update MySQL bind-address and mysqlx-bind-address to allow external connections
