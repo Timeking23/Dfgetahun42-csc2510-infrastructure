@@ -66,7 +66,7 @@
 # TODO - this should only be run if mysql_import_data is true
   ansible.builtin.copy:
     src: "{{ mysql_sql_file }}"
-    dest: /tmp/
+    dest: ~"{{ mysql_sql_file }}"
     when: mysql_import_data
 
 - name: Import SQL data
