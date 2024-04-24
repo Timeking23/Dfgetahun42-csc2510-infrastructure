@@ -1,0 +1,11 @@
+ungrouped:
+  hosts:
+    10.150.0.8:
+    ansible <inventory group name or pattern> -m ping
+webservers:
+  hosts:
+    10.150.0.8:
+      ansible_user: danielgetaun46
+    10.150.0.7:
+      ansible_user: danielgetaun46  
+
