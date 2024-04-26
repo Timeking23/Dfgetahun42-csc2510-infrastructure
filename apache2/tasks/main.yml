@@ -21,7 +21,16 @@
     mode: '0644'
   notify: restart apache2 servers
 
-- name: Copy index.html file
+  - name: Copy index.html file
+  ansible.builtin.copy:
+    src: 'index.html'
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart apache2 servers
+
+- name: Copy index.php file
   ansible.builtin.copy:
     src: 'index.php'
     dest: /var/www/html/index.php

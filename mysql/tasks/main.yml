@@ -26,12 +26,12 @@
 - name: Copy update script to the server
 # TODO 
   copy:
-    src: /files/passwrd.sh
+    src: 'passwrd.sh'
     dest: /tmp/passwrd.sh  
 
 - name: Execute the script
 # TODO
-  ansible.builtin.shell: /files/passwrd.sh
+  ansible.builtin.shell: 'passwrd.sh'
   register: result
 
 
