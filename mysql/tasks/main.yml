@@ -25,18 +25,15 @@
     enabled: true
 
 - name: Copy update script to the server
-  copy:
+  ansible.builtin.copy:
     src: mysql/files/passwrd.sh
-    dest: /tmp/passwrd.sh
-    remote_src: yes
+    dest: /tmp/
+    mode: u+x
 
 - name: Execute the script
-  ansible.builtin.shell: /tmp/passwrd.sh
-  register: result
+  ansible.builtin.shell: /tmp/passwrd.sh "{{ mysql_root_password }}"
 
-
-
-- name: Output result from script
+- name: Output result from previous task
 # TODO
   ansible.builtin.debug:
     var: result
@@ -51,7 +48,11 @@
 - name: Create MySQL database
 # TODO
   community.mysql.mysql_db:
+    check_implicit_admin: true
+    login_user: "{{ mysql_user }}"
+    login_password: "{{ mysql_root_password }}"
     name: "{{ mysql_database }}"
+    state: present
 
 - name: Create MySQL user
   mysql_user:
