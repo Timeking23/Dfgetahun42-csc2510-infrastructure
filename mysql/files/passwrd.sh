@@ -7,8 +7,8 @@ fi
 
 password="$1"
 
-mysql -u danielgetahun46 <<EOF
-ALTER USER 'danielgetahun46'@'localhost' IDENTIFIED BY '$password';
+mysql -u root <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED BY '$password';
 FLUSH PRIVILEGES;
 EOF
 
