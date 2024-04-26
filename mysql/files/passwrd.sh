@@ -1,10 +1,7 @@
 #!/bin/bash
 
-read -sp "Enter the new password for the MySQL root user: " password
-echo ""
-
-if [ -z "$password" ]; then
-    echo "Error: Password not provided."
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <new_password>"
     exit 1
 fi
 
