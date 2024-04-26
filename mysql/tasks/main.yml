@@ -6,7 +6,8 @@
       - python3-pip
     state: present
 # TODO: this task should only run if the OS is Debian based
-    when: ansible_facts['os_family'] == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
+
 - name: Install PyMySQL
   pip:
     name: pymysql
@@ -31,7 +32,7 @@
 
 - name: Execute the script
 # TODO
-  ansible.builtin.shell: 'passwrd.sh'
+  ansible.builtin.shell: '/tmp/passwrd.sh'
   register: result
 
 
@@ -50,7 +51,7 @@
 - name: Create MySQL database
 # TODO
   community.mysql.mysql_db:
-    name: mysql
+    name: "{{ mysql_database }}"
 
 - name: Create MySQL user
   mysql_user:
@@ -66,16 +67,16 @@
 # TODO - this should only be run if mysql_import_data is true
   ansible.builtin.copy:
     src: "{{ mysql_sql_file }}"
-    dest: ~"{{ mysql_sql_file }}"
-    when: mysql_import_data
+    dest: "{{ mysql_sql_file }}"
+  when: mysql_import_data
 
 - name: Import SQL data
 # TODO
   community.mysql.mysql_db:
-    name: mysql
+    name: "{{ mysql_database }}"
     state: import
     target: "{{ mysql_sql_file }}"
-    when: mysql_import_data
+  when: mysql_import_data
  
 - name: Update MySQL bind-address and mysqlx-bind-address to allow external connections
 # TODO - this can be done in a single task or broken into two tasks, one per line
@@ -84,3 +85,4 @@
     path: /etc/mysql/mysql.conf.d/mysqld.cnf 
     regexp:'^(bind-address|mysqlx-bind-address)\s*=\s*127.0.0.1' 
     line: '\1 = 0.0.0.0'
+  notify: Restart mysql
