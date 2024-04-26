@@ -49,9 +49,9 @@
 # TODO
   community.mysql.mysql_db:
     check_implicit_admin: true
-    login_user: "{{ mysql_user }}"
-    login_password: "{{ mysql_root_password }}"
     name: "{{ mysql_database }}"
+    login_password: "{{ mysql_root_password }}"
+    login_user: "{{ mysql_user }}"
     state: present
 
 - name: Create MySQL user
