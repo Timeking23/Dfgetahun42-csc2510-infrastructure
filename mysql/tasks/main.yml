@@ -25,15 +25,15 @@
     enabled: true
 
 - name: Copy update script to the server
-# TODO 
   copy:
-    src: 'passwrd.sh'
-    dest: /tmp/passwrd.sh  
+    src: mysql/files/passwrd.sh
+    dest: /tmp/passwrd.sh
+    remote_src: yes
 
 - name: Execute the script
-# TODO
-  ansible.builtin.shell: '/tmp/passwrd.sh'
+  ansible.builtin.shell: /tmp/passwrd.sh
   register: result
+
 
 
 - name: Output result from script
