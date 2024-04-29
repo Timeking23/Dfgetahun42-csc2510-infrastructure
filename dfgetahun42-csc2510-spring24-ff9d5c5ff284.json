@@ -1,13 +1,1 @@
-{
-  "type": "service_account",
-  "project_id": "dfgetahun42-csc2510-spring24",
-  "private_key_id": "ff9d5c5ff2844cc8de1636da63c93dca83f91587",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCV6OKKcbWIf2ay\nPIVXoQO+lXnOd5+6FqrvfHrfiENjU/Za9wvtQxddgSVSXKDQdrmHhH4E4jNX7211\neI9DhyFaYzzYPQ4CIFYaqeDnd14hAgZsymwOGWfipfZpBjSFzMatT+ILwy62fOod\ndp1aOuw6xZU6N7a/0YDq0q8wumG7io5a+EVfSEeWd90V5Hp6Dt50IBHoGR7tU5zg\njswISKSu2hMzJFR9c7cskZpHJOO+56KMS6THJSXI9RooQs2VRvsq0UncLzqSIjf0\nS5Z0n4MXLJMb/qaIwWO7gzxl+yFxqzhzF6wrl+BOIK3KzkWNJNIdyeqM8RDeZ4yD\noiPcPS9XAgMBAAECggEANP/K5+tfpMx2AFnJQrvYWQ77q3U7cU0GTfkSb+j6+ij7\nFhn1i4KGxjYcfcvlxw3SdgjvjMZ0JIiviDKBY/xoXE5ten3LcBECoBajPvJCwyS2\nJMxD+5Ab3FOUlHjvJMbLDwcJAeOVpkrvck83PmlKj1S/d3+vCo4FKAAok++xEd5V\n/MYaSJRGuemH6ev0CVDoXAimuxuabj+h9a9lVa4ZEaE6YZtL7v5Tqjk2o3sKY3DL\nxBbFpKgdmkfqLXHmoK9xyqsRbVRRW3mW31cld0Xm3f3JpC4rzBkDO0Cm3QGP/An9\njt1jrbUxo4h8QZMv5RV0Qsxnbc+NfyByL/6ut2GlEQKBgQDIJlUOB7IO4xbb+iJa\ng0boBT5ntRnytMuvPcex0zAJ8RAhthDvGLwQRE+1ongI+DIW2zEp6dgusyg9qtWK\nuVemR1BK52YtLrDujAwsi0RGKX0kWGRfSzOpLOSRN5dV47+/n3CS0Xn+nGTLUiSg\nQcIlaVFTSwB2bmF2yY6Jxes7FQKBgQC/vanVcUexywrkYz7MtWJRSa4f+1RR1R0K\nSCQIiiI7D+C/c1WVUd2FF4lTMIi6AA+wt668PDv9zGXFbVxsCt6IPfvbcOj5xKOf\nALh0g4QM9LR/P8r7RCE3EuWfYokKZ3hqH1ky/sF/v/xHeoC/vgM4cm+u2voAm+6l\nnwUCeaqruwKBgQDGJ81FmrDatFHJcBfa7OWiiK6EFnSeKgkOcmfm0mNZNGT4Oz0A\nushWgos4FKYqmy9cGZ7PFEmH0rAgfaX1NhJk+W2w+u/aA8QAKH9VCnyJykGvXiPh\nhJ6c+2k/rH4T9uu8V6oocWQKg+P2uFiyoOgKCf8OK89FcXrlFCAenuiJEQKBgAvZ\nWq94CqgwFgI7J9xasTK4zOvpCjLsapkCEEf+0VK5DniGVhmeL4RUCgZ8D1b/Pfj7\nwO6dAlAS248xzO5YVZwxyGitN5iH0Fy5HK0Gm5h5XtYmSRLyCONwZYROAI4GCujz\n+v0txSNx59M6/M3cnjJU0BYMLjrvZ/YQN60Je8SVAoGBAIJSdYwo8q5H6eXYF08D\nZgsufmioraqF65099m4hM/NlsKSEh96LCxg4njR0oLJptreIUJ/aOdH+kcjVYNN3\nAyEXlPhbMCzEecWdwWg1h1CfEhjFGyRs6l6O7eGR21Dj1dT49q7UtU4RMRGjvjgl\n7kEPkMONWSA2mJafNPylqnNN\n-----END PRIVATE KEY-----\n",
-  "client_email": "terraform@dfgetahun42-csc2510-spring24.iam.gserviceaccount.com",
-  "client_id": "115096938580385892738",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform%40dfgetahun42-csc2510-spring24.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+
